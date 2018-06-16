@@ -1,0 +1,45 @@
+.main-app {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  width: 100%;
+  margin-top: 35vh;
+  position: relative;
+}
+
+.main-app h2 {
+  position: absolute;
+  top: -8vh;
+  font-size: 4vh;
+  color: #fff;
+}
+
+.main-app__url-input {
+  width: 50vw;
+  padding: 15px;
+}
+
+.main-app__button {
+  border: 0;
+  background-color: #ffa500;
+  color: #fff;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &[disabled]:hover {
+    cursor: not-allowed;
+  }
+}
+
+.main-app__service-response {
+  background-color: #fff;
+  text-align: center;
+  font-size: 2vh;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 15px;
+}
