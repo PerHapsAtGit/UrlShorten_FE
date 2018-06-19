@@ -13,7 +13,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: 'development',
   target: 'web',
-  entry: ['@babel/polyfill','./src/index.js'],
+  entry: ['./src/index.js'],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/js/index_bundle.js',

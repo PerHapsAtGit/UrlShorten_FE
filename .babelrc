@@ -19,6 +19,7 @@
         }
     },
     "plugins": [
-        [ "babel-plugin-webpack-aliases", { "config": "./webpack.config.js" } ] 
+        [ "babel-plugin-webpack-aliases", { "config": "./webpack.config.js" } ] ,
+        ["@babel/plugin-transform-regenerator"],
     ]
 }
