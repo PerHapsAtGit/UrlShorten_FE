@@ -7,8 +7,10 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
   inject: 'body',
 });
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MinifyPlugin = require("babel-minify-webpack-plugin");
 const styleLintPlugin = require('stylelint-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+
 
 module.exports = {
   mode: 'development',
@@ -54,6 +56,9 @@ module.exports = {
       files: '**/*.scss',
       failOnError: false,
       quiet: false,
+    }),
+    new MinifyPlugin(null, {
+      comments: false,
     }),
   ],
   resolve: {

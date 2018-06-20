@@ -33,5 +33,3 @@ function noop() {
 }
 require.extensions['.css'] = noop;
 require.extensions['.scss'] = noop;
-
-require('@babel/polyfill');

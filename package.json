@@ -6,7 +6,7 @@
     "start": "webpack-dev-server --color --hot --progress --content-base public/",
     "test": "cross-env NODE_ENV=test nyc --all mocha --opts mocha.opts --no-deprecation",
     "test:watch": "npm run test -- --watch",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.js",
     "eslint": "eslint src --ext js --fix; exit 0",
     "stylelint": "stylelint '**/*.scss'; exit 0"
   },
@@ -33,7 +33,8 @@
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.32",
-    "@babel/plugin-transform-regenerator": "^7.0.0-beta.51",
+    "@babel/plugin-transform-regenerator": "^7.0.0-beta.32",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.32",
     "@babel/polyfill": "^7.0.0-beta.51",
     "@babel/preset-env": "7.0.0-beta.32",
     "@babel/preset-react": "7.0.0-beta.32",
@@ -41,6 +42,7 @@
     "auto-prefixer": "^0.4.2",
     "babel-eslint": "^8.2.1",
     "babel-loader": "^8.0.0-beta.0",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-istanbul": "^4.1.5",
     "babel-plugin-webpack-aliases": "^1.1.3",
     "chai": "^4.1.2",
@@ -59,7 +61,6 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "fetch-mock": "^6.4.4",
     "html-webpack-plugin": "^3.2.0",
-    "isomorphic-fetch": "^2.2.1",
     "jsdom": "^11.5.1",
     "json-loader": "^0.5.7",
     "mini-css-extract-plugin": "^0.4.0",
@@ -80,9 +81,11 @@
     "tapable": "^1.0.0",
     "webpack": "^4.12.0",
     "webpack-cli": "^3.0.7",
+    "webpack-closure-compiler": "^2.1.6",
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.32",
     "prop-types": "^15.6.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
