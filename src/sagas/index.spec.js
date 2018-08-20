@@ -18,14 +18,14 @@ describe('fetchRecordsSaga', () => {
     const yield1 = put({
       type: ACTION_TYPES.SHORTEN_URL_IN_PROGRESS,
     });
-    expect(generator.next().value).to.deep.equal(yield1);
+    expect(generator.next().value).toEqual(yield1);
 
     const mockData = {
       hash,
     };
 
     const yield2 = call(postShortenUrl, action.url);
-    expect(generator.next().value).to.deep.equal(yield2);
+    expect(generator.next().value).toEqual(yield2);
 
     const expected = put({
       type: ACTION_TYPES.SHORTEN_URL_SUCCESS,
@@ -36,7 +36,7 @@ describe('fetchRecordsSaga', () => {
       success: true,
       data: mockData,
     };
-    expect(generator.next(successfulApiResult).value).to.deep.equal(expected);
+    expect(generator.next(successfulApiResult).value).toEqual(expected);
   });
 
   it('should emit failed api call', () => {
@@ -49,10 +49,10 @@ describe('fetchRecordsSaga', () => {
     const yield1 = put({
       type: ACTION_TYPES.SHORTEN_URL_IN_PROGRESS,
     });
-    expect(generator.next().value).to.deep.equal(yield1);
+    expect(generator.next().value).toEqual(yield1);
 
     const yield2 = call(postShortenUrl, action.url);
-    expect(generator.next().value).to.deep.equal(yield2);
+    expect(generator.next().value).toEqual(yield2);
 
     const expected = put({
       type: ACTION_TYPES.SHORTEN_URL_ERROR,
@@ -67,7 +67,7 @@ describe('fetchRecordsSaga', () => {
         errorMsg,
       },
     };
-    expect(generator.next(failedApiResult).value).to.deep.equal(expected);
+    expect(generator.next(failedApiResult).value).toEqual(expected);
   });
 
   it('should handle exception', () => {
@@ -80,10 +80,10 @@ describe('fetchRecordsSaga', () => {
     const yield1 = put({
       type: ACTION_TYPES.SHORTEN_URL_IN_PROGRESS,
     });
-    expect(generator.next().value).to.deep.equal(yield1);
+    expect(generator.next().value).toEqual(yield1);
 
     const yield2 = call(postShortenUrl, action.url);
-    expect(generator.next().value).to.deep.equal(yield2);
+    expect(generator.next().value).toEqual(yield2);
 
     const expected = put({
       type: ACTION_TYPES.SHORTEN_URL_ERROR,
@@ -92,6 +92,6 @@ describe('fetchRecordsSaga', () => {
       },
     });
 
-    expect(generator.throw({id: '123'}).value).to.deep.equal(expected);
+    expect(generator.throw({id: '123'}).value).toEqual(expected);
   });
 });

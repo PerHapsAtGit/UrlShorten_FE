@@ -13,7 +13,7 @@ describe('<App />', () => {
     const wrapper = mount(
       <App {...defaultProps} />
     );
-    expect(wrapper).to.have.length(1);
+    expect(wrapper.length).toEqual(1);
   });
 
   it('should handle button click', () => {
@@ -27,9 +27,9 @@ describe('<App />', () => {
       },
     };
 
-    const spy = sinon.spy(wrapper.instance().props.actions, 'shortenUrl');
+    const spy = jest.spyOn(wrapper.instance().props.actions, 'shortenUrl');
     wrapper.find('button.main-app__button').at(0).simulate('click');
-    expect(spy.calledOnce).to.be.true;
+    expect(spy).toHaveBeenCalledTimes(1);
   });
 
   it('should render service rensponse info', () => {
@@ -41,6 +41,6 @@ describe('<App />', () => {
     );
 
     const infoDiv = wrapper.find('.main-app__service-response');
-    expect(infoDiv.length).to.equal(1);
+    expect(infoDiv.length).toEqual(1);
   });
 });

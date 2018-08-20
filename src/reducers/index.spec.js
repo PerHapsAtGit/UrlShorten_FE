@@ -8,7 +8,7 @@ describe('appReducer', () => {
       type: 'unknown',
     });
 
-    expect(result).to.equal(expected);
+    expect(result).toEqual(expected);
   });
 
   it('should return IN_PROGRESS', () => {
@@ -17,7 +17,7 @@ describe('appReducer', () => {
     };
     const result = appReducer(undefined, expected);
 
-    expect(result.serviceInUse).to.be.true;
+    expect(result.serviceInUse).toBeTrue;
   });
 
   it('should return SUCCESS', () => {
@@ -27,9 +27,9 @@ describe('appReducer', () => {
     };
     const result = appReducer(undefined, expected);
 
-    expect(result.serviceInUse).to.be.false;
-    expect(result.serviceErrorMsg).to.be.null;
-    expect(result.hash).to.equal('123');
+    expect(result.serviceInUse).toBeFalse;
+    expect(result.serviceErrorMsg).toBeNull;
+    expect(result.hash).toEqual('123');
   });
 
   it('should return ERROR', () => {
@@ -41,7 +41,7 @@ describe('appReducer', () => {
     };
     const result = appReducer(undefined, expected);
 
-    expect(result.serviceInUse).to.be.false;
-    expect(result.serviceErrorMsg).to.equal('ERROR');
+    expect(result.serviceInUse).toBeFalse;
+    expect(result.serviceErrorMsg).toEqual('ERROR');
   });
 });

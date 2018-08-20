@@ -10,6 +10,6 @@ describe('Redux action functions', () => {
     };
     const result = actions.shortenUrl(url);
 
-    expect(result).to.deep.equal(expected);
+    expect(result).toEqual(expected);
   });
 });

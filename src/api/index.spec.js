@@ -13,7 +13,7 @@ describe('postShortenUrl() api call for data fetch', () => {
     fetchMock.mock(SERVICE_URL, serviceResult);
 
     postShortenUrl('anything').then((resultData) => {
-      expect(resultData).to.deep.equal(mockResult);
+      expect(resultData).toEqual(mockResult);
       done();
     })
       .catch(done);
@@ -32,7 +32,7 @@ describe('postShortenUrl() api call for data fetch', () => {
     fetchMock.mock(SERVICE_URL, serviceResult);
 
     postShortenUrl('anything').then((resultData) => {
-      expect(resultData).to.deep.equal(mockResult);
+      expect(resultData).toEqual(mockResult);
       done();
     })
       .catch(done);
@@ -51,7 +51,7 @@ describe('postShortenUrl() api call for data fetch', () => {
     fetchMock.mock(SERVICE_URL, 500);
 
     postShortenUrl('anything').then((resultData) => {
-      expect(resultData).to.deep.equal(mockResult);
+      expect(resultData).toEqual(mockResult);
       done();
     })
       .catch(done);
