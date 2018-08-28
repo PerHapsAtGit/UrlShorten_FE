@@ -1,5 +1,5 @@
-{
-    "presets": [
+module.exports = {
+    presets: [
         [
             "@babel/preset-env",
             {
@@ -13,18 +13,10 @@
         ],
         "@babel/preset-react"
     ],
-    "env": {
-        "test": {
-            "plugins": ["istanbul"]
-        }
-    },
     "plugins": [
-        [ "babel-plugin-webpack-aliases", { "config": "./webpack.config.js" } ],
         ["@babel/transform-runtime", {
             "helpers": false,
-            "polyfill": false,
-            "regenerator": true,
-            "moduleName": "babel-runtime"
+            "regenerator": true
           }]
     ]
-}
+};
